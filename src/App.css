@@ -1,0 +1,45 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: rgb(34, 193, 195);
+  background: radial-gradient(
+    circle,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(13, 12, 11, 1) 100%
+  );
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.bookshelf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 15px; /* Space between books */
+}
+
+.book {
+  width: 200px; /* Width of each book */
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: white;
+  overflow: hidden; /* Ensures the content fits in the box */
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes extra space below the image */
+  margin-bottom: 10px;
+}
+
+/* Optional: add a hover effect */
+.book:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
