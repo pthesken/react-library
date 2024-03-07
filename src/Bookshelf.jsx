@@ -1,5 +1,10 @@
 //this sends out Bookshelf and the props used, which will be translated in App.jsx to another name/form
-export default function Bookshelf({ books, selectedBook, bookClickHandler }) {
+export default function Bookshelf({
+  books,
+  selectedBook,
+  bookClickHandler,
+  onDeleteClicked,
+}) {
   return (
     <div className="bookshelf">
       {books.map((book, index) => (
@@ -8,6 +13,13 @@ export default function Bookshelf({ books, selectedBook, bookClickHandler }) {
           className={`book ${selectedBook === index ? "selected" : ""}`}
           onClick={() => bookClickHandler(index)}
         >
+          <button
+            onClick={() => {
+              onDeleteClicked(book.id);
+            }}
+          >
+            Delete
+          </button>
           <img
             src={book.image}
             alt={`Cover of the book ${book.title}`}

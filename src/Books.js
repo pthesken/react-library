@@ -3,9 +3,11 @@ import EchoesImage from "./images/echoes.webp";
 import ForgottenImage from "./images/forgotten.webp";
 import CodeImage from "./images/code.webp";
 import WhispersImage from "./images/whispers.webp";
+import { nanoid } from "nanoid";
 
 export default [
   {
+    id: nanoid(),
     title: "The Stars My Destination",
     image: "https://pictures.abebooks.com/isbn/9780425055243-us.jpg",
     author: "Alfred Bester",
@@ -14,6 +16,7 @@ export default [
       "the story of an unambitious and directionless man named Gulliver Foyle who is abandoned in a damaged spaceship and, through his own rage and a series of mishaps, remakes himself as an aristocrat in a society wrecked by the invention of teleportation to stalk the people who did him wrong.",
   },
   {
+    id: nanoid(),
     title: "Echoes of Tomorrow",
     author: "Miranda Foster",
     genre: "Science Fiction",
@@ -22,6 +25,7 @@ export default [
     image: EchoesImage,
   },
   {
+    id: nanoid(),
     title: "Code of Despair",
     author: "Lucas M. Reynolds",
     genre: "Tech Thriller",
@@ -30,6 +34,7 @@ export default [
     image: CodeImage,
   },
   {
+    id: nanoid(),
     title: "The Last Alchemist",
     author: "Clara Davenport",
     genre: "Fantasy",
@@ -38,6 +43,7 @@ export default [
     image: AlchemistImage,
   },
   {
+    id: nanoid(),
     title: "Whispers of the Deep",
     author: "Samuel Wright",
     genre: "Thriller",
@@ -46,6 +52,7 @@ export default [
     image: WhispersImage,
   },
   {
+    id: nanoid(),
     title: "Chronicles of the Forgotten Lands",
     author: "Lydia Green",
     genre: "Adventure",
