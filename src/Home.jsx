@@ -1,24 +1,18 @@
-import { useState } from "react";
 import Bookshelf from "./Bookshelf";
 import Form from "./Form";
-import DefaultBooks from "./Books";
 
-export default function Home() {
-  const [selectedBook, setSelectedBook] = useState(null);
-  const [bookList, setBookList] = useState([...DefaultBooks]);
-
-  const selectBook = (index) => {
-    if (selectedBook === index) {
-      setSelectedBook(null);
-    } else {
-      setSelectedBook(index);
-    }
-  };
+export default function Home({
+  bookList,
+  setBookList,
+  selectBook,
+  selectedBook,
+}) {
   return (
     <>
       <Form bookList={bookList} setBookList={setBookList} />
 
       <Bookshelf
+        selectBook={selectBook}
         books={bookList}
         bookClickHandler={selectBook}
         selectedBook={selectedBook}
