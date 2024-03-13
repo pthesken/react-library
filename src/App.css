@@ -113,11 +113,42 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
   /* align-content: center; */
   padding: 20px;
   gap: 15px; /* Space between books */
   transition: transform 0.3s ease;
+}
+
+.bookshelf h1 {
+  font-size: 48px;
+  padding: 20px;
+}
+
+.bookshelf h1:hover {
+  transform: scale(1.03);
+  border: 0.001px solid black;
+  border-radius: 8px;
+}
+
+.bookshelf h1:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(13, 12, 11, 0.5) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+  padding: 10px; /* Adjust the padding to change the border size */
+  box-sizing: border-box;
 }
 
 .bookshelf:hover {
@@ -148,6 +179,12 @@
   transform: none;
 }
 
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 15px; /* Space between books */
+}
 .book {
   width: 200px; /* Width of each book */
   border: 1px solid #ccc;

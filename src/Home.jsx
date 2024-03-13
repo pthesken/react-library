@@ -1,21 +1,20 @@
 import Bookshelf from "./Bookshelf";
 import Form from "./Form";
+import { useNavigate } from "react-router-dom";
 
-export default function Home({
-  bookList,
-  setBookList,
-  selectBook,
-  selectedBook,
-}) {
+export default function Home({ bookList, setBookList }) {
+  const navigate = useNavigate();
+
   return (
     <>
       <Form bookList={bookList} setBookList={setBookList} />
 
       <Bookshelf
-        selectBook={selectBook}
         books={bookList}
-        bookClickHandler={selectBook}
-        selectedBook={selectedBook}
+        showDetails={false}
+        bookClickHandler={(bookId) => {
+          navigate(`books/${bookId}`);
+        }}
         onDeleteClicked={(id) => {
           const updatedBookList = bookList.filter((book) => {
             return book.id !== id;

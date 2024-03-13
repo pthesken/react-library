@@ -4,20 +4,12 @@ import "normalize.css";
 import "./App.css";
 import Home from "./Home";
 // import { Routes, Route } from "react-router";
-import {
-  NavLink,
-  Route,
-  Routes,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import Bookshelf from "./Bookshelf";
 import BookDetail from "./BookDetail";
 
 function App() {
-  const location = useLocation();
   const navigate = useNavigate();
-  const pageRoutes = ["/", "/bookshelf"];
 
   const selectBook = (index) => {
     if (selectedBook === index) {
@@ -43,36 +35,13 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <Home
-              bookList={bookList}
-              setBookList={setBookList}
-              selectBook={selectBook}
-              selectedBook={selectedBook}
-            />
-          }
-        />
-        <Route
-          path="/bookshelf"
-          element={
-            <Bookshelf
-              selectBook={selectBook}
-              books={bookList}
-              bookClickHandler={selectBook}
-              selectedBook={selectedBook}
-              setSelectedBook={setSelectedBook}
-              setBookList={setBookList}
-              onDeleteClicked={(id) => {
-                const updatedBookList = bookList.filter((book) => {
-                  return book.id !== id;
-                });
-                setBookList(updatedBookList);
-              }}
-            />
-          }
+          element={<Home bookList={bookList} setBookList={setBookList} />}
         />
 
-        <Route path="/book/:bookId" element={<BookDetail books={bookList} />} />
+        <Route
+          path="/books/:bookId"
+          element={<BookDetail books={bookList} />}
+        />
       </Routes>
     </>
   );

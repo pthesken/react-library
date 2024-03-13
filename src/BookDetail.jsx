@@ -5,9 +5,9 @@ function BookDetail({ books }) {
   const { bookId } = useParams();
   const book = books.find((book) => book.id === bookId);
 
-  if (!book) {
-    return <div>Book not found</div>;
-  }
+  // if (!book) {
+  //   return <div>Book not found</div>;
+  // }
 
   return (
     <div>
