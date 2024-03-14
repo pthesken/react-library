@@ -109,6 +109,12 @@
   background-color: #003f4f;
 }
 
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .bookshelf {
   position: relative;
   display: flex;
@@ -127,7 +133,7 @@
   padding: 20px;
 }
 
-.bookshelf h1:hover {
+/* .bookshelf h1:hover {
   transform: scale(1.03);
   border: 0.001px solid black;
   border-radius: 8px;
@@ -148,12 +154,13 @@
   pointer-events: none;
   z-index: -1;
   padding: 10px; /* Adjust the padding to change the border size */
-  box-sizing: border-box;
-}
+/* box-sizing: border-box;
+} */
+*/
 
-.bookshelf:hover {
+/* .bookshelf:hover {
   transform: scale(1.03);
-}
+} */
 
 /* The term ::before is used in CSS to create a pseudo-element that becomes the first child of the selected element. It allows you to insert content or styling before the content of the element. */
 .bookshelf:hover::before {

@@ -28,7 +28,7 @@ export default [
     id: nanoid(),
     title: "Code of Despair",
     author: "Lucas M. Reynolds",
-    genre: "Tech Thriller",
+    genre: "Science Fiction",
     description:
       "In the heart of Kauai, a group of six coding bootcamp students stumble upon an algorithm that could revolutionize the world of cybersecurity. But as they delve deeper, they find themselves entangled in a web of deceit and corporate espionage. With every line of code, they draw closer to danger, and their tech skills are the only thing standing between order and digital chaos. Can they survive the cutthroat world of tech, or will their first foray into the industry be their last?",
     image: CodeImage,
@@ -46,7 +46,7 @@ export default [
     id: nanoid(),
     title: "Whispers of the Deep",
     author: "Samuel Wright",
-    genre: "Thriller",
+    genre: "Fantasy",
     description:
       "A marine biologist's discovery of a strange underwater sound leads to a dark secret lurking beneath the ocean's surface.",
     image: WhispersImage,
@@ -55,7 +55,7 @@ export default [
     id: nanoid(),
     title: "Chronicles of the Forgotten Lands",
     author: "Lydia Green",
-    genre: "Adventure",
+    genre: "Fantasy",
     description:
       "A band of unlikely heroes embarks on a quest to uncover the mysteries of a land erased from all maps and memories.",
     image: ForgottenImage,

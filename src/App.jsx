@@ -27,9 +27,6 @@ function App() {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
-            <NavLink to="/bookshelf">Bookshelf</NavLink>
-          </li>
         </ul>
       </nav>
       <Routes>
