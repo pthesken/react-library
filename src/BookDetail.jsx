@@ -15,8 +15,8 @@ function BookDetail({ books }) {
 
       <div className="book-details">
         <h1 className="book-detail-title">{book.title}</h1>
-        <h1 className="book-detail-author">{book.author}</h1>
-        <h2 className="book-detail-description">{book.description}</h2>
+        <h2 className="book-detail-author">{book.author}</h2>
+        <h3 className="book-detail-description">{book.description}</h3>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ export default function Home({ bookList, setBookList }) {
           });
           setBookList(updatedBookList);
         }}
-        heading="Bookshelf"
+        heading="B O O K S H E L F"
       />
     </>
   );

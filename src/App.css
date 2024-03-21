@@ -12,6 +12,7 @@
   );
   overflow-y: auto;
   overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navigation {
@@ -20,6 +21,9 @@
   overflow: hidden;
   width: 100%;
   justify-content: space-between;
+  position: fixed; /* Keep the navigation bar fixed at the top */
+  top: 0; /* Align the navigation bar at the top */
+  z-index: 1000; /* Ensure the nav bar is above other content */
 }
 
 .nav-menu {
@@ -115,7 +119,7 @@
   align-items: center;
 }
 .header h1 {
-  /* text-shadow: 3px 3px rgba(34, 193, 195, 1); */
+  text-shadow: 3px 3px rgba(34, 193, 195, 1);
 }
 
 .searchbar {
@@ -179,7 +183,7 @@
   padding-top: 30px; /* Increase top padding to make space for the delete button */
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
@@ -235,6 +239,7 @@
   height: 500px;
   width: auto;
   padding: 20px;
+  border-radius: 30px;
 }
 
 .book-details {
@@ -244,15 +249,22 @@
   align-items: center; /* Centers horizontally in the flex container */
 
   padding: 10px;
-  background: rgb(5, 104, 106);
+  background: black;
   border-radius: 8px;
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .book-detail-title {
+  text-transform: uppercase;
+  margin-bottom: 0; /* Remove the bottom margin of the title */
 }
 
 .book-detail-author {
+  margin-top: 5px; /* Reduce the top margin of the author to bring it closer to the title */
 }
 
 .book-detail-description {
+  margin-top: 20px; /* If you want to ensure there's more space above the description */
 }
