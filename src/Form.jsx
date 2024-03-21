@@ -72,11 +72,12 @@ export default function Form({ setBookList, bookList }) {
           const newBook = {
             id: nanoid(),
             title: bookTitle,
-            author: author,
-            genre: genre,
-            description: description,
+            author,
+            genre,
+            description,
             image: bookImage.trim() ? bookImage : BookImage, //ternary: if true whats after "?", if not then what's after the colon
           };
+          //move to new function? ^
 
           setBookList([...bookList, newBook]);
         }}

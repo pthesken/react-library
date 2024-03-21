@@ -5,20 +5,11 @@ import "./App.css";
 import Home from "./Home";
 // import { Routes, Route } from "react-router";
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
-import Bookshelf from "./Bookshelf";
 import BookDetail from "./BookDetail";
+import ScienceFiction from "./ScienceFiction";
+import Fantasy from "./Fantasy";
 
 function App() {
-  const navigate = useNavigate();
-
-  const selectBook = (index) => {
-    if (selectedBook === index) {
-      setSelectedBook(null);
-    } else {
-      setSelectedBook(index);
-    }
-  };
-  const [selectedBook, setSelectedBook] = useState(null);
   const [bookList, setBookList] = useState([...DefaultBooks]);
   return (
     <>
@@ -27,12 +18,28 @@ function App() {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
+          <li>
+            <NavLink to="/ScienceFiction">Science Fiction</NavLink>
+          </li>
+          <li>
+            <NavLink to="/fantasy">Fantasy</NavLink>
+          </li>
         </ul>
       </nav>
       <Routes>
         <Route
           path="/"
           element={<Home bookList={bookList} setBookList={setBookList} />}
+        />
+        <Route
+          path="/sciencefiction"
+          element={
+            <ScienceFiction books={bookList} setBookList={setBookList} />
+          }
+        />
+        <Route
+          path="/fantasy"
+          element={<Fantasy books={bookList} setBookList={setBookList} />}
         />
 
         <Route

@@ -109,9 +109,18 @@
   background-color: #003f4f;
 }
 
-.searchbar {
+.header {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.header h1 {
+  /* text-shadow: 3px 3px rgba(34, 193, 195, 1); */
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -132,35 +141,6 @@
   font-size: 48px;
   padding: 20px;
 }
-
-/* .bookshelf h1:hover {
-  transform: scale(1.03);
-  border: 0.001px solid black;
-  border-radius: 8px;
-}
-
-.bookshelf h1:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(13, 12, 11, 0.5) 100%
-  );
-  pointer-events: none;
-  z-index: -1;
-  padding: 10px; /* Adjust the padding to change the border size */
-/* box-sizing: border-box;
-} */
-*/
-
-/* .bookshelf:hover {
-  transform: scale(1.03);
-} */
 
 /* The term ::before is used in CSS to create a pseudo-element that becomes the first child of the selected element. It allows you to insert content or styling before the content of the element. */
 .bookshelf:hover::before {
@@ -193,20 +173,26 @@
   gap: 15px; /* Space between books */
 }
 .book {
-  width: 200px; /* Width of each book */
+  width: 200px;
   border: 1px solid #ccc;
   padding: 10px;
+  padding-top: 30px; /* Increase top padding to make space for the delete button */
+  position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   background-color: white;
-  overflow: hidden; /* Ensures the content fits in the box */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .book img {
   max-width: 100%;
-  height: auto;
-  display: block; /* Removes extra space below the image */
+  display: block;
+  width: 100%; /* Full width of the container */
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Cover the container without losing aspect ratio */
+
+  margin-top: 10px; /* Add margin to the top of the image to push it down */
   margin-bottom: 10px;
 }
 
@@ -215,13 +201,58 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.bookshelf-mode-book.selected {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border: 2px ridge black;
+.book button {
+  position: absolute;
+  top: 5px; /* Position it closer to the top edge */
+  right: 5px; /* Position it closer to the right edge */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  color: #333;
 }
+
+.book button:hover {
+  color: red;
+}
+
 /* the a means anchor element */
 .bookshelf .book a {
   color: inherit; /* This makes the text color inherit from the parent, instead of the default blue */
   text-decoration: none; /* This removes the underline */
+}
+
+.book-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically in the flex container */
+  align-items: center; /* Centers horizontally in the flex container */
+}
+
+.book-detail-image {
+  height: 500px;
+  width: auto;
+  padding: 20px;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically in the flex container */
+  align-items: center; /* Centers horizontally in the flex container */
+
+  padding: 10px;
+  background: rgb(5, 104, 106);
+  border-radius: 8px;
+}
+
+.book-detail-title {
+}
+
+.book-detail-author {
+}
+
+.book-detail-description {
 }

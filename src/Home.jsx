@@ -5,28 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home({ bookList, setBookList }) {
   const navigate = useNavigate();
-  const [searchBook, setSearchBook] = useState("");
-  const displayedBooks = bookList.filter((book) => {
-    const lowerCaseBookTitle = book.title.toLowerCase();
-    return lowerCaseBookTitle.includes(searchBook.toLowerCase());
-  });
 
   return (
     <>
       <Form bookList={bookList} setBookList={setBookList} />
 
-      <div className="searchbar">
-        <input
-          onChange={(event) => {
-            setSearchBook(event.target.value);
-          }}
-          type="text"
-          placeholder="Search Library"
-        />
-      </div>
-
       <Bookshelf
-        books={displayedBooks}
+        books={bookList}
         showDetails={false}
         bookClickHandler={(bookId) => {
           navigate(`books/${bookId}`);
@@ -37,6 +22,7 @@ export default function Home({ bookList, setBookList }) {
           });
           setBookList(updatedBookList);
         }}
+        heading="Bookshelf"
       />
     </>
   );

@@ -5,16 +5,19 @@ function BookDetail({ books }) {
   const { bookId } = useParams();
   const book = books.find((book) => book.id === bookId);
 
-  // if (!book) {
-  //   return <div>Book not found</div>;
-  // }
+  if (!book) {
+    return <div>Book not found</div>;
+  }
 
   return (
-    <div>
-      <img src={book.image} alt="" />
-      <h1>{book.title}</h1>
-      <h1>{book.author}</h1>
-      <h2>{book.description}</h2>
+    <div className="book-detail">
+      <img src={book.image} alt={book.title} className="book-detail-image" />
+
+      <div className="book-details">
+        <h1 className="book-detail-title">{book.title}</h1>
+        <h1 className="book-detail-author">{book.author}</h1>
+        <h2 className="book-detail-description">{book.description}</h2>
+      </div>
     </div>
   );
 }
